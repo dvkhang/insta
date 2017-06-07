@@ -1,0 +1,37 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "Unfollow Insta",
+  "version": "1.0.0",
+
+  // Recommended
+  "default_locale": "en",
+  "description": "Unfollow list following ",
+  "icons": {  "16": "icon.png",
+              "48": "icon.png",
+              "128": "icon.png" },
+
+  // Optional
+  "author": "Mike",
+  // Pick one (or none)
+  "browser_action": {
+  "default_icon": {                    // optional
+    "16": "icon.png",           // optional
+    "24": "icon.png",           // optional
+    "32": "icon.png"            // optional
+  },
+  "default_title": "Unfollow Instagram",      // optional; shown in tooltip
+  "default_popup": "popup/popup.html"        // optional
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*", "*://*.facebook.com/*"],
+      "js": ["popup/js/jquery.min.js", "popup/js/content.js"]
+    }
+  ],
+
+  "permissions": [
+   "tabs"
+  ]
+}
